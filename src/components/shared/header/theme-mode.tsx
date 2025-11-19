@@ -1,0 +1,60 @@
+'use client';
+
+import { useState } from "react";
+import { useTheme } from "next-themes";
+import {
+    DropdownMenu,
+    DropdownMenuTrigger,
+    DropdownMenuContent,
+    DropdownMenuSeparator,
+    DropdownMenuLabel
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+import { Sun, Moon, SunMoon } from 'lucide-react';
+import { THEME_MODES } from "@/lib/constants";
+
+const ThemeMode = () => {
+    const { theme, setTheme } = useTheme();
+    const [ open, setOpen ] = useState(false);
+
+    const themeChangeHandler = (newTheme: string) => {
+        setTheme(newTheme);
+        setOpen(false);
+    }
+
+    return (
+        <DropdownMenu open={open} onOpenChange={setOpen}>
+            <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon" className="rounded-full"  >
+                    {theme === 'light' ?
+                        <Sun /> :
+                        theme === 'dark' ?
+                            <Moon /> :
+                            <SunMoon />
+                    }
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+                <DropdownMenuLabel>Choose theme mode</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                {THEME_MODES.map((mode) => {
+                    const IconComponent = mode.icon === 'Sun' ? Sun : mode.icon === 'Moon' ? Moon : SunMoon;
+                    return (
+                        <Button
+                            key={mode.id}
+                            variant="ghost"
+                            size="sm"
+                            className="w-full justify-start capitalize"
+                            onClick={() => themeChangeHandler(mode.title)}
+                        >
+                            <IconComponent className="mr-2" />
+                            {mode.title}
+                        </Button>
+                    );
+                })}
+            </DropdownMenuContent>
+        </DropdownMenu>
+    );
+};
+
+export default ThemeMode;
