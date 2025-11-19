@@ -17,6 +17,12 @@ const ThemeMode = () => {
     const { theme, setTheme } = useTheme();
     const [ open, setOpen ] = useState(false);
 
+    const isClient = typeof window !== "undefined";
+
+    if (!isClient) {
+        return null;
+    }
+
     const themeChangeHandler = (newTheme: string) => {
         setTheme(newTheme);
         setOpen(false);
