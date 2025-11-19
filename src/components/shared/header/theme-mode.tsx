@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import { useTheme } from "next-themes";
 import {
     DropdownMenu,
@@ -16,12 +16,13 @@ import { THEME_MODES } from "@/lib/constants";
 const ThemeMode = () => {
     const { theme, setTheme } = useTheme();
     const [ open, setOpen ] = useState(false);
+    const [mounted, setMounted] = useState(false);
 
-    const isClient = typeof window !== "undefined";
-
-    if (!isClient) {
-        return null;
-    }
+    // ensure client-only rendering to avoid hydration mismatch
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+    if (!mounted) return null;
 
     const themeChangeHandler = (newTheme: string) => {
         setTheme(newTheme);

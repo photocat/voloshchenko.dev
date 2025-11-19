@@ -1,7 +1,11 @@
+import Introduction from "@/components/shared/sections/introduction";
+import Separator from "@/components/shared/separator";
+
 const Home = () => {
     return (
-        <div className="flex">
-            Home page
+        <div className="page">
+            <Introduction />
+            <Separator />
         </div>
     );
 }
