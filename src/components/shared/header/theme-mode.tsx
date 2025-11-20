@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Sun, Moon, SunMoon } from 'lucide-react';
-import { THEME_MODES } from "@/lib/constants";
+import { APP_THEME_MODES } from "@/lib/constants";
 
 const ThemeMode = () => {
     const { theme, setTheme } = useTheme();
@@ -44,7 +44,7 @@ const ThemeMode = () => {
             <DropdownMenuContent align="end">
                 <DropdownMenuLabel>Choose theme mode</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                {THEME_MODES.map((mode) => {
+                {APP_THEME_MODES.map((mode) => {
                     const IconComponent = mode.icon === 'Sun' ? Sun : mode.icon === 'Moon' ? Moon : SunMoon;
                     return (
                         <Button

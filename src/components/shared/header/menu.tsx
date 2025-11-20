@@ -1,4 +1,4 @@
-import {APP_URL, MAIN_NAVIGATION} from "@/lib/constants";
+import { APP_URL, APP_MAIN_NAVIGATION } from "@/lib/constants";
 import Link from "next/link";
 import {
     Sheet,
@@ -15,7 +15,7 @@ export const Menu = () => {
     return (
         <div className="">
             <nav className="hidden lg:flex items-center gap-8">
-                {MAIN_NAVIGATION.map((navItem) => (
+                {APP_MAIN_NAVIGATION.map((navItem) => (
                     <Link href={APP_URL + navItem.href} key={navItem.id} className="capitalize text-base hover:underline">
                         { navItem.title }
                     </Link>
@@ -29,7 +29,7 @@ export const Menu = () => {
                     </SheetTrigger>
                     <SheetContent className="flex flex-col items-start py-4 px-8">
                         <SheetTitle className="uppercase text-sm">Menu</SheetTitle>
-                        {MAIN_NAVIGATION.map((navItem) => (
+                        {APP_MAIN_NAVIGATION.map((navItem) => (
                             <Link key={navItem.id} href={APP_URL + navItem.href} className="w-full text-base capitalize active:underline">
                                 { navItem.title }
                             </Link>

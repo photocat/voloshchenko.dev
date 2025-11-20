@@ -1,13 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {APP_NAME, APP_URL} from "@/lib/constants";
-import ProfileImage from '@/../public/photo.jpg';
+import ProfileImage from '../../../../../public/photo.jpg';
 import { Button } from '@/components/ui/button';
 import { Linkedin, Github, SendHorizontal } from 'lucide-react';
+import SectionWrapper from "@/components/shared/sections/section-wrapper";
 
-const Introduction = () => {
+const Intro = () => {
     return (
-        <section className="section justify-between items-center gap-6 lg:gap-8 flex-wrap lg:flex-nowrap">
+        <SectionWrapper>
             <div className="flex-[1_0_auto] lg:order-2 flex justify-center items-center">
                 <Image
                     className={"rounded-lg shadow-lg dark:shadow-none shadow-zinc-900"}
@@ -43,8 +44,8 @@ const Introduction = () => {
                     </Button>
                 </div>
             </div>
-        </section>
+        </SectionWrapper>
     );
 };
 
-export default Introduction;
+export default Intro;
