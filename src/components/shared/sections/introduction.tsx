@@ -25,18 +25,18 @@ const Introduction = () => {
                     A Warsaw based front-end developer passionate about building accessible and user friendly websites.
                 </p>
                 <div className="flex flex-wrap mt-4 gap-4">
-                    <Button asChild variant="outline" className="rounded-2xl bg-accent">
+                    <Button asChild variant="outline" className="rounded-2xl hover:bg-zinc-100 hover:dark:bg-zinc-800">
                         <Link href={`${ APP_URL }/#contact`}>
                             Contact me
                             <SendHorizontal className="ml-2" />
                         </Link>
                     </Button>
-                    <Button asChild variant="outline" className="rounded-full" size="icon">
+                    <Button asChild variant="outline" className="rounded-full hover:bg-zinc-100 hover:dark:bg-zinc-800" size="icon">
                         <Link href="https://www.linkedin.com/in/andrii-voloshchenko/" target="_blank" rel="noopener noreferrer">
                             <Linkedin />
                         </Link>
                     </Button>
-                    <Button asChild variant="outline" className="rounded-full" size="icon">
+                    <Button asChild variant="outline" className="rounded-full hover:bg-zinc-100 hover:dark:bg-zinc-800" size="icon">
                         <Link href="https://github.com/photocat" target="_blank" rel="noopener noreferrer">
                             <Github />
                         </Link>

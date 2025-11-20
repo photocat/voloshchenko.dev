@@ -32,7 +32,7 @@ const ThemeMode = () => {
     return (
         <DropdownMenu open={open} onOpenChange={setOpen}>
             <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon" className="rounded-full"  >
+                <Button variant="outline" size="icon" className="rounded-full hover:bg-zinc-100 hover:dark:bg-zinc-800">
                     {theme === 'light' ?
                         <Sun /> :
                         theme === 'dark' ?
