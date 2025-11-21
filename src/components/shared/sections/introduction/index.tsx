@@ -1,21 +1,22 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Link from 'next/link';
-import { APP_NAME, APP_URL, APP_SOCIAL_LINKS } from "@/lib/constants";
-import ProfileImage from '../../../../../public/photo.jpg';
-import LightProfileImage from '../../../../../public/photo-light.jpg';
 import { Button } from '@/components/ui/button';
 import { LiaLinkedinIn, LiaGithub, LiaPaperPlane } from "react-icons/lia";
 import SectionWrapper from "@/components/shared/sections/section-wrapper";
-import { useTheme } from 'next-themes';
+import { APP_NAME, APP_URL, APP_SOCIAL_LINKS } from "@/lib/constants";
+import ProfileImage from '../../../../../public/photo.jpg';
+import LightProfileImage from '../../../../../public/photo-light.jpg';
 
 const Intro = () => {
     const { theme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setMounted(true);
     }, []);
 
