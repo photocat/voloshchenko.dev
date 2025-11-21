@@ -1,11 +1,13 @@
-import {Label} from "@/components/ui/label";
-import {Input} from "@/components/ui/input";
-import {Textarea} from "@/components/ui/textarea";
-import {Button} from "@/components/ui/button";
+'use client';
+
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 const ContactForm = () => {
     return (
-        <form action="">
+        <form>
             <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2 mb-4">
                     <Label htmlFor="name">Name</Label>
@@ -16,7 +18,7 @@ const ContactForm = () => {
                     <Input type="email" id="email" placeholder="Type your email" />
                 </div>
                 <div className="flex flex-col gap-2 mb-4">
-                    <Label htmlFor="email">Subject</Label>
+                    <Label htmlFor="subject">Subject</Label>
                     <Input type="text" id="subject" placeholder="Type subject" />
                 </div>
                 <div className="flex flex-col gap-2 mb-4">
