@@ -23,7 +23,7 @@ const ContactForm = () => {
                     <Label htmlFor="message">Message</Label>
                     <Textarea id="message" placeholder="Type your message here." />
                 </div>
-                <Button type="submit" className="bg-emerald-700 hover:bg-emerald-600 text-neutral-50">Send Message</Button>
+                <Button type="submit" className="bg-emerald-700 hover:bg-emerald-600 text-neutral-50 w-fit">Send Message</Button>
             </div>
         </form>
     );

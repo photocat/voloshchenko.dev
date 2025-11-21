@@ -28,9 +28,9 @@ export const Menu = () => {
                         <LiaBarsSolid />
                     </SheetTrigger>
                     <SheetContent className="flex flex-col items-start py-4 px-8">
-                        <SheetTitle className="uppercase text-sm">Menu</SheetTitle>
+                        <SheetTitle className="uppercase text-xlg">Menu</SheetTitle>
                         {APP_MAIN_NAVIGATION.map((navItem) => (
-                            <Link key={navItem.id} href={APP_URL + navItem.href} className="w-full text-base capitalize active:underline">
+                            <Link key={navItem.id} href={APP_URL + navItem.href} className="w-full text-lg capitalize active:underline">
                                 { navItem.title }
                             </Link>
                         ))}

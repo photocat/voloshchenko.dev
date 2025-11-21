@@ -29,7 +29,7 @@ const ProjectItem = ({ project }: { project: Project}) => {
             </div>
             <div className="flex-1 lg:flex-1/2 px-0 lg:px-12 py-6 lg:py-14">
                 <h3 className="title-sm">{project.title}</h3>
-                <p className="mb-8">{project.description}</p>
+                <p className="mb-4 lg:mb-8">{project.description}</p>
                 <ul className="flex flex-col">
                     {project.info.client && (
                         <ProjectInfoItem name="Client" item={project.info.client } />
