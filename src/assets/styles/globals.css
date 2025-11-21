@@ -57,7 +57,7 @@
     --secondary-foreground: oklch(0.205 0 0);
     --muted: oklch(0.97 0 0);
     --muted-foreground: oklch(0.556 0 0);
-    --accent: #D3E97A;
+    --accent: oklch(0.97 0 0);
     --accent-foreground: oklch(0.205 0 0);
     --destructive: oklch(0.577 0.245 27.325);
     --border: oklch(0.922 0 0);
@@ -147,5 +147,13 @@ body {
 }
 
 .title {
-    @apply text-2xl xl:text-7xl font-(family-name:--font-bebas) dark:text-white text-(color:--foreground);
+    @apply text-5xl xl:text-7xl font-(family-name:--font-bebas) dark:text-white text-(color:--foreground);
+}
+
+.title-md {
+    @apply text-4xl xl:text-5xl font-(family-name:--font-bebas) dark:text-white text-(color:--foreground) uppercase;
+}
+
+.title-sm {
+    @apply text-2xl lg:text-3xl mb-4 font-bold dark:text-white text-(color:--foreground);
 }

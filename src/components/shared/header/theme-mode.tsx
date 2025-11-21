@@ -10,7 +10,7 @@ import {
     DropdownMenuLabel
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { Sun, Moon, SunMoon } from 'lucide-react';
+import { LiaSun, LiaMoon, LiaCogSolid} from "react-icons/lia";
 import { APP_THEME_MODES } from "@/lib/constants";
 
 const ThemeMode = () => {
@@ -34,10 +34,10 @@ const ThemeMode = () => {
             <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon" className="rounded-full hover:bg-zinc-100 hover:dark:bg-zinc-800">
                     {theme === 'light' ?
-                        <Sun /> :
+                        <LiaSun /> :
                         theme === 'dark' ?
-                            <Moon /> :
-                            <SunMoon />
+                            <LiaMoon /> :
+                            <LiaCogSolid />
                     }
                 </Button>
             </DropdownMenuTrigger>
@@ -45,7 +45,7 @@ const ThemeMode = () => {
                 <DropdownMenuLabel>Choose theme mode</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {APP_THEME_MODES.map((mode) => {
-                    const IconComponent = mode.icon === 'Sun' ? Sun : mode.icon === 'Moon' ? Moon : SunMoon;
+                    const IconComponent = mode.icon === 'Sun' ? LiaSun : mode.icon === 'Moon' ? LiaMoon : LiaCogSolid;
                     return (
                         <Button
                             key={mode.id}

@@ -8,7 +8,7 @@ import {
     SheetTrigger,
     SheetFooter
 } from "@/components/ui/sheet";
-import { Menu as MenuIcon } from 'lucide-react';
+import { LiaBarsSolid } from "react-icons/lia";
 import ThemeMode from '@/components/shared/header/theme-mode';
 
 export const Menu = () => {
@@ -25,7 +25,7 @@ export const Menu = () => {
             <nav className="flex items-center justify-center lg:hidden">
                 <Sheet>
                     <SheetTrigger className="btn-ghost btn-circle btn">
-                        <MenuIcon />
+                        <LiaBarsSolid />
                     </SheetTrigger>
                     <SheetContent className="flex flex-col items-start py-4 px-8">
                         <SheetTitle className="uppercase text-sm">Menu</SheetTitle>

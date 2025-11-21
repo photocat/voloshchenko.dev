@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {APP_NAME, APP_URL} from "@/lib/constants";
+import { APP_NAME, APP_URL, APP_SOCIAL_LINKS } from "@/lib/constants";
 import ProfileImage from '../../../../../public/photo.jpg';
 import { Button } from '@/components/ui/button';
-import { Linkedin, Github, SendHorizontal } from 'lucide-react';
+import { LiaLinkedinIn, LiaGithub, LiaPaperPlane } from "react-icons/lia";
 import SectionWrapper from "@/components/shared/sections/section-wrapper";
 
 const Intro = () => {
@@ -21,25 +21,25 @@ const Intro = () => {
                 />
             </div>
             <div className="flex-[0_1_auto] lg:order-1 gap-2 flex-col">
-                <h1 className="title">Hi, i am <br />Andrii Voloshchenko.</h1>
-                <p className="section__description lg:max-w-1/2 mb-5 lg:mb-8">
+                <h1 className="title">Hi, I am <br />Andrii Voloshchenko.</h1>
+                <p className="lg:max-w-3/4 mb-5 lg:mb-8">
                     A Warsaw based front-end developer passionate about building accessible and user friendly websites.
                 </p>
                 <div className="flex flex-wrap mt-4 gap-4">
-                    <Button asChild variant="outline" className="rounded-2xl hover:bg-zinc-100 hover:dark:bg-zinc-800">
-                        <Link href={`${ APP_URL }/#contact`}>
+                    <Button asChild variant="default" className="rounded-2xl bg-emerald-700 hover:bg-emerald-600 text-neutral-50">
+                        <Link href={ APP_URL + '/#contact' }>
                             Contact me
-                            <SendHorizontal className="ml-2" />
+                            <LiaPaperPlane className="ml-1" />
                         </Link>
                     </Button>
                     <Button asChild variant="outline" className="rounded-full hover:bg-zinc-100 hover:dark:bg-zinc-800" size="icon">
-                        <Link href="https://www.linkedin.com/in/andrii-voloshchenko/" target="_blank" rel="noopener noreferrer">
-                            <Linkedin />
+                        <Link href={ APP_SOCIAL_LINKS.linkedin } target="_blank" rel="noopener noreferrer" aria-label="View LinkedIn profile">
+                            <LiaLinkedinIn />
                         </Link>
                     </Button>
                     <Button asChild variant="outline" className="rounded-full hover:bg-zinc-100 hover:dark:bg-zinc-800" size="icon">
-                        <Link href="https://github.com/photocat" target="_blank" rel="noopener noreferrer">
-                            <Github />
+                        <Link href={ APP_SOCIAL_LINKS.github } target="_blank" rel="noopener noreferrer" aria-label="View GitHub profile">
+                            <LiaGithub />
                         </Link>
                     </Button>
                 </div>
