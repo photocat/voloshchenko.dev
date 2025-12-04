@@ -1,3 +1,4 @@
+import React from "react";
 import type { Metadata } from "next";
 import { Bebas_Neue, Manrope } from "next/font/google";
 import "@/assets/styles/globals.css";
