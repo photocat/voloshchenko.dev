@@ -1,3 +1,9 @@
+/**
+ * Project Info Item Component
+ * Renders a single item of project information.
+ * @return {JSX.Element} The rendered Project Info Item component.
+ */
+
 import { ProjectInfoItemType } from "@/types";
 
 const ProjectInfoItem = ({ name, item } : { name: string, item: ProjectInfoItemType}) => {

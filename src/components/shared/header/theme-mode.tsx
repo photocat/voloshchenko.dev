@@ -1,3 +1,8 @@
+/**
+ * ThemeMode component allows users to switch between different theme modes (light, dark, system).
+ * It uses the next-themes library for theme management and a dropdown menu for selection.
+ */
+
 'use client';
 
 import { useEffect, useState } from "react";

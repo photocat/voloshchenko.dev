@@ -1,3 +1,9 @@
+/**
+ * Projects Section Component
+ * This component displays a list of featured projects.
+ * @return {JSX.Element} The Projects section component.
+ */
+
 import { APP_MAIN_NAVIGATION } from "@/lib/constants";
 import SectionWrapper from "../section-wrapper";
 import ProjectList from "@/components/shared/sections/projects/projects-list";

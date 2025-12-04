@@ -1,3 +1,9 @@
+/**
+ * Project List Component
+ * Renders a list of project items.
+ * @returns {JSX.Element} The Project List component.
+ */
+
 import { PROJECTS } from "@/lib/constants";
 import ProjectItem from "../project-item";
 

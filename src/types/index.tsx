@@ -1,11 +1,3 @@
-export type ProjectInfo = {
-    client?: string;
-    technologies?: string[];
-    year?: string;
-    role?: string;
-    challenges?: string[];
-}
-
 export type Project = {
     id: string;
     title: string;
@@ -13,7 +5,11 @@ export type Project = {
     imageUrl: string;
     projectUrl: string;
     githubUrl?: string;
-    info: ProjectInfo;
+    client?: string;
+    technologies?: string[];
+    year?: string;
+    role?: string;
+    challenges?: string[];
     tag?: string[];
 }
 

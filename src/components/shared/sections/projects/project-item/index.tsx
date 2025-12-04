@@ -1,3 +1,10 @@
+/**
+ * Project Item Component
+ * Displays detailed information about a project including image, title, description, client, role, year, technologies, challenges, and links to the project and GitHub.
+ * @param {Project} project - The project data to display.
+ * @returns {JSX.Element} The project item element.
+ */
+
 import { Project } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,20 +38,20 @@ const ProjectItem = ({ project }: { project: Project}) => {
                 <h3 className="title-sm">{project.title}</h3>
                 <p className="mb-4 lg:mb-8">{project.description}</p>
                 <ul className="flex flex-col">
-                    {project.info.client && (
-                        <ProjectInfoItem name="Client" item={project.info.client } />
+                    {project.client && (
+                        <ProjectInfoItem name="Client" item={project.client } />
                     )}
-                    {project.info.role && (
-                        <ProjectInfoItem name="Role" item={project.info.role } />
+                    {project.role && (
+                        <ProjectInfoItem name="Role" item={project.role } />
                     )}
-                    {project.info.year && (
-                        <ProjectInfoItem name="Year" item={project.info.year } />
+                    {project.year && (
+                        <ProjectInfoItem name="Year" item={project.year } />
                     )}
-                    {project.info.technologies && (
-                        <ProjectInfoItem name="Technologies" item={project.info.technologies } />
+                    {project.technologies && (
+                        <ProjectInfoItem name="Technologies" item={project.technologies } />
                     )}
-                    {project.info.challenges && (
-                        <ProjectInfoItem name="Challenges" item={project.info.challenges } />
+                    {project.challenges && (
+                        <ProjectInfoItem name="Challenges" item={project.challenges } />
                     )}
                 </ul>
                 <div className="flex flex-wrap gap-4 lf:gap-8 mt-8">

@@ -1,3 +1,9 @@
+/**
+ * Contact Form Component
+ * This component renders a contact form with fields for name, email, subject, and message.
+ * @return {JSX.Element} The Contact Form component.
+ */
+
 'use client';
 
 import { Label } from "@/components/ui/label";

@@ -1,3 +1,10 @@
+/**
+ * Introduction Section Component
+ * This component displays an introduction section with a profile image,
+ * a brief description, and social media links.
+ * @returns {JSX.Element} The rendered introduction section.
+ */
+
 'use client';
 
 import { useEffect, useState } from 'react';

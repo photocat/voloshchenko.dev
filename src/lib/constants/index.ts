@@ -1,6 +1,10 @@
 export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'Voloshchenko.dev';
 export const APP_DESCRIPTION = process.env.NEXT_PUBLIC_APP_DESCRIPTION || 'Personal site of Andrii Voloshchenko';
 export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+export const APP_HEADER_SCROLL_DELTA = 5;
+export const APP_HEADER_HIDE_OFFSET = 200;
+export const APP_HEADER_MOBILE_HEIGHT = 56; // in px
+export const APP_HEADER_DESKTOP_HEIGHT = 86; // in px
 export const APP_MAIN_NAVIGATION = [
     { id: 'main-nav-item-1', title: 'work', href: '/#work' },
     { id: 'main-nav-item-2', title: 'about', href: '/#about' },
@@ -19,13 +23,11 @@ export const PROJECTS = [
         imageUrl: '/project.jpg',
         projectUrl: 'https://voloshchenko.dev',
         githubUrl: 'https://github.com/photocat',
-        info: {
-            client: 'Self-initiated',
-            technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-            year: '2025',
-            role: 'Front-end Developer',
-            challenges: ['Designing a responsive layout', 'Optimizing performance for fast load times'],
-        },
+        client: 'Self-initiated',
+        technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+        year: '2025',
+        role: 'Front-end Developer',
+        challenges: ['Designing a responsive layout', 'Optimizing performance for fast load times'],
         tag: ['featured', 'web development'],
     },
     {
@@ -35,13 +37,11 @@ export const PROJECTS = [
         imageUrl: '/project.jpg',
         projectUrl: 'https://example-ecommerce.com',
         githubUrl: 'https://github.com/photocat',
-        info: {
-            client: 'Example Corp',
-            technologies: ['React', 'Node.js', 'MongoDB'],
-            year: '2024',
-            role: 'Full Stack Developer',
-            challenges: ['Implementing secure payment processing', 'Ensuring scalability for high traffic'],
-        },
+        client: 'Example Corp',
+        technologies: ['React', 'Node.js', 'MongoDB'],
+        year: '2024',
+        role: 'Full Stack Developer',
+        challenges: ['Implementing secure payment processing', 'Ensuring scalability for high traffic'],
         tag: [],
     },
     {
@@ -51,13 +51,11 @@ export const PROJECTS = [
         imageUrl: '/project.jpg',
         projectUrl: 'https://example-blog.com',
         githubUrl: 'https://github.com/photocat',
-        info: {
-            client: 'Blogify Inc',
-            technologies: ['Vue.js', 'Firebase', 'Quill.js'],
-            year: '2023',
-            role: 'Front-end Developer',
-            challenges: ['Integrating a rich text editor', 'Implementing real-time updates with Firebase'],
-        },
+        client: 'Blogify Inc',
+        technologies: ['Vue.js', 'Firebase', 'Quill.js'],
+        year: '2023',
+        role: 'Front-end Developer',
+        challenges: ['Integrating a rich text editor', 'Implementing real-time updates with Firebase'],
         tag: ['web development'],
     }
 ];

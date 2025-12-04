@@ -1,3 +1,8 @@
+/**
+ * Footer component
+ * @returns {JSX.Element} The footer element
+ */
+
 import {APP_NAME} from "@/lib/constants";
 
 export const Footer = () => {

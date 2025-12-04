@@ -1,3 +1,9 @@
+/**
+ * Project Tag Component
+ * Renders a tag for a project
+ * @return {JSX.Element} The Project Tag component
+ */
+
 import { ProjectTagType } from "@/types";
 
 const ProjectTag = ({ tag } : { tag: ProjectTagType }) => {

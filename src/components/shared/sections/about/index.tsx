@@ -1,3 +1,8 @@
+/**
+ * About Me Section
+ * @returns {JSX.Element} The About Me section component
+ */
+
 import {APP_MAIN_NAVIGATION, APP_ABOUT_ME, APP_URL} from "@/lib/constants";
 import SectionWrapper from "../section-wrapper";
 import Link from "next/link";

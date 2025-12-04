@@ -1,3 +1,10 @@
+/**
+ * Menu component for site navigation.
+ * Displays a horizontal menu on large screens and a hamburger menu on smaller screens.
+ * Includes theme mode toggle.
+ */
+
+import React from "react";
 import { APP_URL, APP_MAIN_NAVIGATION } from "@/lib/constants";
 import Link from "next/link";
 import {
@@ -10,13 +17,24 @@ import {
 } from "@/components/ui/sheet";
 import { LiaBarsSolid } from "react-icons/lia";
 import ThemeMode from '@/components/shared/header/theme-mode';
+import { trySmoothScroll } from "@/lib/utils";
 
 export const Menu = () => {
+
+    const handleNavClick = (href: string) => (e: React.MouseEvent) => {
+        if (trySmoothScroll(href)) e.preventDefault();
+    }
+
     return (
         <div className="">
             <nav className="hidden lg:flex items-center gap-8">
                 {APP_MAIN_NAVIGATION.map((navItem) => (
-                    <Link href={APP_URL + navItem.href} key={navItem.id} className="capitalize text-base hover:underline">
+                    <Link
+                        href={APP_URL + navItem.href}
+                        key={navItem.id}
+                        className="capitalize text-base hover:underline"
+                        onClick={handleNavClick(navItem.href)}
+                    >
                         { navItem.title }
                     </Link>
                 ))}
@@ -30,7 +48,12 @@ export const Menu = () => {
                     <SheetContent className="flex flex-col items-start py-4 px-8">
                         <SheetTitle className="uppercase text-xlg">Menu</SheetTitle>
                         {APP_MAIN_NAVIGATION.map((navItem) => (
-                            <Link key={navItem.id} href={APP_URL + navItem.href} className="w-full text-lg capitalize active:underline">
+                            <Link
+                                href={APP_URL + navItem.href}
+                                key={navItem.id}
+                                className="capitalize text-base hover:underline"
+                                onClick={handleNavClick(navItem.href)}
+                            >
                                 { navItem.title }
                             </Link>
                         ))}

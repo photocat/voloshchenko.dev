@@ -1,3 +1,9 @@
+/**
+ * Contact Section Component
+ * This component renders the contact section of the webpage, including a contact form and social media links.
+ * @return {JSX.Element} The Contact section component.
+ */
+
 import { APP_MAIN_NAVIGATION } from "@/lib/constants";
 import { APP_SOCIAL_LINKS } from "@/lib/constants";
 import SectionWrapper from "../section-wrapper";
