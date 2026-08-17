@@ -2,6 +2,31 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Workflow
+
+Never commit directly to `main`. Every change — features, fixes, docs, config — goes on its own feature branch and is opened as a separate pull request. One logical change per branch/PR; don't bundle unrelated changes together.
+
+### Branch naming
+
+```
+<type>/<NNN>-<kebab-case-slug>
+```
+
+- `type` — one of `feat`, `fix`, `docs`, `chore`, `refactor`, `perf`, `style` (matches the commit-message prefixes already used in this repo's history).
+- `NNN` — a 3-digit, zero-padded, **global** sequence number shared across all types (not reset per type, not per year). Take the next value from **Next branch number** below, then increment that number as part of the same PR that consumes it.
+- `slug` — short kebab-case description of the change.
+
+Examples: `docs/001-branch-workflow-policy`, `feat/004-project-tags-filter`.
+
+**Next branch number: 002**
+
+```bash
+git checkout -b <type>/<NNN>-<slug>
+# ...make changes, commit...
+git push -u origin <type>/<NNN>-<slug>
+gh pr create   # or open the compare URL printed by `git push` if gh isn't installed
+```
+
 ## Commands
 
 ```bash
