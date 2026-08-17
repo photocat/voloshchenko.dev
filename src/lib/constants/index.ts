@@ -13,7 +13,6 @@ export const APP_MAIN_NAVIGATION = [
 export const APP_THEME_MODES = [
     { id: 'theme-mode-1', title: 'light', icon: 'Sun' },
     { id: 'theme-mode-2', title: 'dark', icon: 'Moon' },
-    { id: 'theme-mode-3', title: 'system', icon: 'SunMoon' },
 ]
 export const PROJECTS = [
     {
