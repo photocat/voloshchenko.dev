@@ -14,10 +14,13 @@ There are no tests in this project.
 
 Prisma commands (when working on DB schema):
 ```bash
-npx prisma migrate dev    # Apply migrations
+npx prisma migrate dev    # Apply migrations (does NOT auto-regenerate client in Prisma 7 — run generate after)
 npx prisma generate       # Regenerate client (also runs on postinstall)
 npx prisma studio         # Open Prisma Studio GUI
+npx prisma db seed        # Seed DB from src/lib/constants (see prisma/seed.ts)
 ```
+
+Requires Node `^20.19 || ^22.12 || ^24.0` (Prisma 7's minimum) — see `.nvmrc`. Connection config lives in `prisma.config.ts` (loaded by the Prisma CLI), not in `schema.prisma`'s `datasource` block — Prisma 7 rejects a `url` there.
 
 ## Architecture
 
@@ -34,9 +37,11 @@ The single page (`src/app/(root)/page.tsx`) renders four sections in order: `Int
 
 ### Data layer
 
-All app content (projects list, navigation, about text, social links, theme options) lives in **`src/lib/constants/index.ts`**. This is the primary place to update copy or add projects.
+Projects are read from the database via Prisma. `src/lib/prisma.ts` exports a singleton `PrismaClient` (using `@prisma/adapter-pg`, required by Prisma 7 for direct, non-Accelerate connections — a bare `new PrismaClient()` without an adapter throws at runtime). `src/lib/project-service.ts` exposes `getProjects()` / `getProjectBySlug(slug)`, used by `ProjectList` (`src/components/shared/sections/projects/projects-list/index.tsx`), an async server component.
 
-A Prisma schema (`prisma/schema.prisma`) with `Project` and `Tecnology` models exists and has migrations, but **is not yet wired into the app** — the UI reads from constants, not the database. A prior attempt to wire it in (see git history around "Prisma integration") was reverted due to runtime errors; the schema is also missing `url = env("DATABASE_URL")` in the `datasource` block, and no driver adapter (e.g. `@prisma/adapter-neon`) is configured, which Prisma 7's client requires for direct (non-Accelerate) connections.
+Everything else (navigation, about text, social links, theme options) still lives in **`src/lib/constants/index.ts`** — there are no DB models for those and none are planned. `PROJECTS` in that file is now only the seed source (`prisma/seed.ts`), not read by the UI.
+
+The homepage (`src/app/(root)/page.tsx`) sets `export const revalidate = 3600` so the DB is queried at build time and then re-fetched in the background at most once an hour (ISR), rather than on every request or only once at build time.
 
 ### Component structure
 

@@ -32,6 +32,7 @@ model Project {
   year          Int         @default(2025)
   role          String      @default("Frontend Developer")
   challenges    String[]
+  tags          String[]    @default([])
   createdAt     DateTime    @default(now()) @db.Timestamp(6)
   updatedAt     DateTime    @updatedAt
 }

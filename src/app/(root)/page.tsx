@@ -4,6 +4,8 @@ import Separator from "@/components/shared/separator";
 import About from "@/components/shared/sections/about";
 import Contact from "@/components/shared/sections/contact";
 
+export const revalidate = 3600;
+
 const Home = () => {
     return (
         <div className="page">

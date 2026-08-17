@@ -4,13 +4,15 @@
  * @returns {JSX.Element} The Project List component.
  */
 
-import { PROJECTS } from "@/lib/constants";
+import { getProjects } from "@/lib/project-service";
 import ProjectItem from "../project-item";
 
-const ProjectList = () => {
+const ProjectList = async () => {
+    const projects = await getProjects();
+
     return (
         <ul className="flex flex-col gap-8 lg:gap-20">
-            {PROJECTS.map((project) => (
+            {projects.map((project) => (
                 <li key={ project.id } className="list-none">
                     <ProjectItem project={ project } />
                 </li>
