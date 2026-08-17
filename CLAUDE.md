@@ -36,8 +36,7 @@ The single page (`src/app/(root)/page.tsx`) renders four sections in order: `Int
 
 All app content (projects list, navigation, about text, social links, theme options) lives in **`src/lib/constants/index.ts`**. This is the primary place to update copy or add projects.
 
-A Prisma schema (`prisma/schema.prisma`) with `Project` and `Tecnology` models exists and has migrations. 
-The UI now reads from database (Prisma) instead of constants, but can be extended to use both.
+A Prisma schema (`prisma/schema.prisma`) with `Project` and `Tecnology` models exists and has migrations, but **is not yet wired into the app** — the UI reads from constants, not the database. A prior attempt to wire it in (see git history around "Prisma integration") was reverted due to runtime errors; the schema is also missing `url = env("DATABASE_URL")` in the `datasource` block, and no driver adapter (e.g. `@prisma/adapter-neon`) is configured, which Prisma 7's client requires for direct (non-Accelerate) connections.
 
 ### Component structure
 
@@ -60,10 +59,3 @@ Reusable layout classes defined in `src/assets/styles/globals.css`:
 `src/lib/utils.ts` exports:
 - `cn()` — combines clsx + tailwind-merge for conditional class names.
 - `trySmoothScroll(href)` — scrolls to a hash target with header-height offset and updates the URL hash without a page jump. Used by navigation links.
-
-### Prisma Integration
-
-- **Initial setup**: Prisma schema is set up with Project and Tecnology models
-- **Data source**: Database connection configured in .env file 
-- **Services**: Created project-service.ts for database interaction
-- **Integration**: Projects data is now fetched from DB instead of constants
